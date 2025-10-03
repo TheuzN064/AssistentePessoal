@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Matheus Eduardo</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+    :root {
+      --bg-dark: #111827;
+      --bg-card: #1F2937;
+      --text-primary: #F9FAFB;
+      --text-secondary: #9CA3AF;
+      --accent: #0891B2;
+      --accent-hover: #06B6D4;
+      --success: #10B981;
+      --error: #EF4444;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: var(--bg-dark); color: var(--text-primary); }
+    section { padding: 80px 5%; min-height: 90vh; display: flex; flex-direction: column; justify-content: center; }
+    h1, h2 { margin-bottom: 25px; color: var(--accent); font-weight: 700; }
+    h2 { font-size: 2.5rem; text-align: center; }
+    p { margin-bottom: 15px; line-height: 1.8; color: var(--text-secondary); max-width: 700px; }
+    header { background: rgba(31, 41, 55, 0.8); backdrop-filter: blur(10px); padding: 20px 5%; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--bg-card); }
+    header .header-content { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 15px; }
+    header h1 { font-size: 1.5rem; color: var(--text-primary); margin: 0; }
+    header nav a { color: var(--text-primary); margin: 0 15px; text-decoration: none; font-weight: 600; position: relative; }
+    header nav a:hover { color: var(--accent); }
+    #sobre .container { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; justify-content: center; }
+    #sobre img { border-radius: 50%; width: 250px; height: 250px; object-fit: cover; border: 5px solid var(--accent); }
+    .projetos-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .card { background: var(--bg-card); border-radius: 12px; padding: 25px; transition: 0.3s; }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 25px; margin-top: 40px; }
+    .skill { background: var(--bg-card); padding: 25px; border-radius: 12px; text-align: center; transition: 0.3s; font-weight: 600; }
+    .skill:hover { background: var(--accent); transform: scale(1.05); color: var(--bg-dark); }
+    form { display: flex; flex-direction: column; gap: 20px; max-width: 600px; margin: 0 auto; }
+    input, textarea { padding: 15px; border-radius: 8px; border: 1px solid var(--bg-card); background: var(--bg-card); color: var(--text-primary); }
+    button { padding: 15px; border: none; border-radius: 8px; background: var(--accent); color: var(--text-primary); font-weight: 600; cursor: pointer; }
+    button:hover { background: var(--accent-hover); }
+    footer { background: var(--bg-card); color: var(--text-secondary); text-align: center; padding: 25px; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1>Matheus Eduardo</h1>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="sobre">
+    <div class="container">
+      <img src="https://via.placeholder.com/250" alt="Foto Matheus Eduardo">
+      <div>
+        <h2>Sobre Mim</h2>
+        <p>Olá! Sou Matheus Eduardo, estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> na UniGoiás...</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="container">
+      <h2>Meus Projetos</h2>
+      <div class="projetos-container">
+        <div class="card">
+          <h3>Cofre de Senhas Pessoal</h3>
+          <p>Aplicação web segura para armazenamento e organização de senhas.</p>
+        </div>
+        <div class="card">
+          <h3>SURADV - Sistema de Advertências</h3>
+          <p>Plataforma web para gerenciamento de advertências escolares.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <div class="container">
+      <h2>Habilidades</h2>
+      <div class="skills-container">
+        <div class="skill"><i class="fa-brands fa-php"></i><span>PHP</span></div>
+        <div class="skill"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+        <div class="skill"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+      <h2>Entre em Contato</h2>
+      <form action="processa_index.php" method="post">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu email" required>
+        <textarea name="mensagem" rows="6" placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 - Portfólio de Matheus Eduardo.</p>
+  </footer>
+
+</body>
+</html>

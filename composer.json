@@ -1,0 +1,16 @@
+{
+    "require": {
+        "spomky-labs/otphp": "^11.2"
+    },
+    "autoload": {
+        "classmap": [
+            "config/",
+            "dao/",
+            "models/",
+            "security/"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
