@@ -1,0 +1,45 @@
+# Privilégios para `lucena`@`localhost`
+
+GRANT USAGE ON *.* TO `lucena`@`localhost` IDENTIFIED BY PASSWORD '*8DC87B5FF8AC4F706ABC8BE17A05D30EB77FCB25';
+
+GRANT ALL PRIVILEGES ON `assis_pessoal`.* TO `lucena`@`localhost`;
+
+
+# Privilégios para `lucenaadm`@`localhost`
+
+GRANT ALL PRIVILEGES ON *.* TO `lucenaadm`@`localhost` IDENTIFIED BY PASSWORD '*255A3F52355056836074C1039D3E311924BA7BF5' WITH GRANT OPTION;
+
+
+# Privilégios para `mariadb.sys`@`localhost`
+
+GRANT USAGE ON *.* TO `mariadb.sys`@`localhost`;
+
+GRANT SELECT, DELETE ON `mysql`.`global_priv` TO `mariadb.sys`@`localhost`;
+
+
+# Privilégios para `mysql`@`localhost`
+
+GRANT ALL PRIVILEGES ON *.* TO `mysql`@`localhost` IDENTIFIED VIA mysql_native_password USING 'invalid' OR unix_socket WITH GRANT OPTION;
+
+GRANT PROXY ON ''@'%' TO 'mysql'@'localhost' WITH GRANT OPTION;
+
+
+# Privilégios para `phpmyadmin`@`localhost`
+
+GRANT USAGE ON *.* TO `phpmyadmin`@`localhost` IDENTIFIED BY PASSWORD '*676D4DC828D3E2DB1E727291615597B7182726E7';
+
+GRANT ALL PRIVILEGES ON `phpmyadmin`.* TO `phpmyadmin`@`localhost`;
+
+
+# Privilégios para `root`@`localhost`
+
+GRANT ALL PRIVILEGES ON *.* TO `root`@`localhost` IDENTIFIED VIA mysql_native_password USING '*1B211B616FC22821877977B968181989DB755EB4' OR unix_socket WITH GRANT OPTION;
+
+GRANT PROXY ON ''@'%' TO 'root'@'localhost' WITH GRANT OPTION;
+
+
+# Privilégios para `seguranca_admin`@`localhost`
+
+GRANT RELOAD, CREATE USER ON *.* TO `seguranca_admin`@`localhost` IDENTIFIED BY PASSWORD '*9A94F63645D72B7E18A32CC76A9C08EEB13F7EFD';
+
+GRANT UPDATE ON `mysql`.`user` TO `seguranca_admin`@`localhost`;
