@@ -88,11 +88,8 @@ switch ($action) {
         $encryptedData = $passwordDao->getPasswordById($id, $userId);
         if (!$encryptedData) { echo json_encode(['success' => false, 'message' => 'Não encontrado.']); exit(); }
         
-        $name = Crypto::decrypt($encryptedData['name'], $masterPassword);
-        if ($name === false) { echo json_encode(['success' => false, 'message' => 'Falha na descriptografia.']); exit(); }
-        
         $decryptedData = [
-            'success' => true, 'id' => $encryptedData['id'], 'name' => $name,
+            'success' => true, 'id' => $encryptedData['id'], 'name' => Crypto::decrypt($encryptedData['name'], $masterPassword),
             'group_id' => $encryptedData['group_id'],
             'group_name' => $encryptedData['group_name'],
             'description' => Crypto::decrypt($encryptedData['description'], $masterPassword),

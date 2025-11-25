@@ -28,7 +28,7 @@ if ($masterPassword) {
     
     foreach($allPasswordsEncrypted as $p) {
         try {
-            // Tenta descriptografar cada campo. Throwable pega qualquer tipo de erro.
+            // Carrega cada campo do cofre (neste modo, os dados ficam em texto simples).
             $decryptedPassword = [
                 'id' => $p['id'],
                 'group_id' => $p['group_id'],
@@ -52,7 +52,10 @@ if ($masterPassword) {
 ?>
 <script src="https://cdn.jsdelivr.net/npm/otpauth@9.2.2/dist/otpauth.umd.min.js"></script>
 <header class="mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <div><h1 class="text-2xl sm:text-3xl font-bold text-white">Gerenciador de Senhas</h1><p class="text-gray-400 text-sm sm:text-base">Suas senhas, criptografadas e seguras.</p></div>
+    <div>
+        <h1 class="text-2xl sm:text-3xl font-bold text-white">Gerenciador de Senhas</h1>
+        <p class="text-gray-400 text-sm sm:text-base">Modo demonstrativo sem criptografia, pensado para apresentação em sala.</p>
+    </div>
     <div class="flex items-center gap-2 sm:gap-4">
         <button onclick="openModal('add-modal')" class="px-3 py-2 font-semibold bg-blue-600 text-white hover:bg-blue-700 rounded-md flex items-center gap-2 text-xs sm:text-sm"><i class="ph-plus-circle"></i> Adicionar</button>
         <a href="dashboard.php" class="px-3 py-2 text-xs sm:text-sm bg-gray-700 text-gray-200 hover:bg-gray-600 rounded-md">Voltar</a>

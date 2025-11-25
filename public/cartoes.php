@@ -134,7 +134,7 @@ if ($masterPassword) {
         document.getElementById('edit-card-expiry').value = 'Carregando...';
         document.getElementById('edit-card-cvv').value = '***';
 
-        // Busca os dados descriptografados do servidor
+        // Busca os dados já prontos do servidor (armazenados em texto simples)
         try {
             const response = await fetch(`processa_cartao.php?action=get_details&id=${cardId}`);
             if (!response.ok) {

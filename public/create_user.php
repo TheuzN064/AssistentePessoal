@@ -9,7 +9,7 @@ require_once __DIR__ . '/../config/ConexaoPDO.php';
 // --- CONFIGURE SUAS DUAS SENHAS AQUI ---
 $login_username = 'nygel';
 $login_password = 'ninja06';   // Senha para entrar no site
-$vault_password = '2006'; // Senha para descriptografar os dados
+$vault_password = '2006'; // Senha para liberar o cofre (dados em texto simples neste modo demonstrativo)
 
 // Gera os hashes para ambas as senhas
 $login_hashed = password_hash($login_password, PASSWORD_DEFAULT);
