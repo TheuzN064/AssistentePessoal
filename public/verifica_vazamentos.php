@@ -22,11 +22,11 @@ $passwordDao = new PasswordDAO();
 $pwnedPasswords = [];
 
 try {
-    // 1. Busca todas as senhas criptografadas do usuário
+    // 1. Busca todas as senhas salvas do usuário (armazenadas em texto simples neste modo)
     $allPasswordsEncrypted = $passwordDao->getAllDetailsByUserId($userId);
     
     foreach ($allPasswordsEncrypted as $p) {
-        // 2. Descriptografa a senha em memória
+        // 2. Lê a senha como está salva em texto simples
         $decryptedPassword = Crypto::decrypt($p['password'], $masterPassword);
         
         if (empty($decryptedPassword)) {

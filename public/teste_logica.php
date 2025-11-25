@@ -57,9 +57,9 @@ try {
     echo "<p>Objeto 'TransactionDAO' criado com sucesso.</p>";
     echo "<hr>";
 
-    // PASSO 4: Executar a lógica de negócio (criptografar e salvar)
+    // PASSO 4: Executar a lógica de negócio (salvar em texto simples)
     echo "<h2>Passo 4: Executando DAO->create()</h2>";
-    echo "<p>Tentando criptografar e inserir os dados no banco...</p>";
+    echo "<p>Tentando inserir os dados no banco (sem criptografia)...</p>";
     
     $result = $dao->create($transaction, $testMasterPassword);
     
@@ -70,7 +70,7 @@ try {
 
     if ($result === true) {
         echo "<h2 style='color: green;'>SUCESSO FINAL!</h2>";
-        echo "<p>A lógica de cadastro, incluindo a criptografia, funcionou e o DAO retornou 'true'.</p>";
+        echo "<p>A lógica de cadastro funcionou em modo demonstrativo, armazenando tudo em texto simples.</p>";
     } else {
         echo "<h2 style='color: red;'>FALHA NA LÓGICA!</h2>";
         echo "<p>O método DAO->create() foi executado, mas retornou um erro. A mensagem de erro específica está acima.</p>";
